@@ -7,4 +7,5 @@ RUN wget http://apachemirror.wuchna.com/tomcat/tomcat-9/v9.0.35/bin/apache-tomca
 RUN gunzip apache-tomcat-9.0.35.tar.gz
 RUN tar -xvf apache-tomcat-9.0.35.tar
 RUN mv apache-tomcat-9.0.35 /usr/bin/tomcat9
+COPY target/*war /usr/bin/tomcat9/webapps/
 CMD ["/usr/bin/tomcat9/bin/catalina.sh","run"]
